@@ -1,26 +1,45 @@
 
 
-// bmi cal
-// function bmiCalculator (weight, height) {
-//     var bmi = weight/Math.pow(height,2);
+function bmiCalculator(weight, height) {
+    var bmi = weight / Math.pow(height, 2);
     
-//     return Math.round( bmi);
-// }
-// var bmi = bmiCalculator(55,1.8);
-// console.log(bmi);
-function bmiCalculator(weight, height){
-    var bmi=weight / Math.pow(height,2);
-    return Math.round(bmi);
+    return get(bmi);
 }
 
-var bmi= bmiCalculator(85, 1);
-console.log(bmi);
-if(bmi<18.5){
-    console.log("Your BMI is "+ bmi + " so you are underweight");
+function get(bmi) {
+    if (bmi < 18.5) {
+        return "Your BMI is " + bmi + ", so you are underweight.";
+    } else if (bmi >= 18.5 && bmi <= 24.9) {
+        return "Your BMI is " + bmi + ", so you have a normal weight.";
+    } else {
+        return "Your BMI is " + bmi + ", so you are overweight.";
+    }
 }
-else if(bmi>18.5 && bmi<24.9){
-    console.log("Your BMI is "+ bmi + " so you are normal weight");
+
+// Example usage:
+var bmiResult = bmiCalculator(70, 2);
+console.log(bmiResult);
+  
+
+// used toFixed before . show how decimal value
+
+function getBmi(weight,height){
+    var bmi = weight/Math.pow(height,2);
+    return gett(bmi);
 }
-else{
-   console.log("Your BMI is "+ bmi + " so you are overweight"); 
+
+function gett(bmi){
+    if(bmi<18.5){
+        return "Your BMI is " +  bmi.toFixed(3) + ", so you are underweight.";
+    }
+    else if(bmi>=18.5 && bmi<=24.9){
+        return "Your BMI is " + bmi.toFixed(2) + ", so you have a normal weight.";
+    }
+    else{
+        return "Your BMI is " + bmi.toFixed(2) + ", so you are overweight.";
+    }
+
 }
+
+var result =getBmi(55,1.8);
+console.log(result);
